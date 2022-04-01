@@ -42,7 +42,7 @@
 								<td><?php if($p['stockcontrol']>0):?><?php echo $p['qty'];?><?php else:?>不限量<?php endif;?></td>
 								<td><?php echo $p['qty_sell'];?></td>
 								<td><?php echo $p['price'];?></td>
-								<td align="center"><a class="layui-btn layui-btn-warm layui-btn-xs" href="/product/<?php echo $p['id'];?>.html">购买</a></td>
+								<td align="center"><a class="layui-btn layui-btn-warm layui-btn-xs" href="/product/<?php echo $p['id'];?>/<?php echo $p['uid'];?>.html">购买</a></td>
 							</tr>
 						<?php endif;?>
 					<?php endforeach;?>

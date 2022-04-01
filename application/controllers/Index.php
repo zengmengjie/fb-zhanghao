@@ -19,6 +19,7 @@ class IndexController extends ProductBasicController
 
 	public function indexAction()
 	{
+        $uid = $this->get('uid')?:'';
 		if(file_exists(INSTALL_LOCK)){
 			$data = array();
 			//获取原始分类
@@ -41,11 +42,12 @@ class IndexController extends ProductBasicController
 					if($p['qty_switch']>0){
 						$items[$k]['qty'] = $p['qty_virtual'];
 					}
+					$items[$k]['uid'] = $uid;
 				}
 				$data['products_type_active'] = $products_type_active;
 				$data['products'] = $items;
 			}
-			
+
 			$data['title'] = "购买商品";
 			if($this->tpl){
 				$this->display($this->tpl, $data);

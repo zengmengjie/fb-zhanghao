@@ -27,6 +27,7 @@ class OrderController extends ProductBasicController
     {
 		//下订单
 		$pid = ceil($this->getPost('pid'));
+		$uid = $this->getPost('uid')?:'';
 		$number = ceil($this->getPost('number'));
 		$chapwd = $this->getPost('chapwd');
 		$addons = $this->getPost('addons');
@@ -181,6 +182,7 @@ class OrderController extends ProductBasicController
 						'status'=>0,
 						'addons'=>$o_addons,
 						'addtime'=>time(),
+                        'kefu_uid'   => $uid
 					);
 					$id = $this->m_order->Insert($m);
 					if($id>0){

@@ -95,18 +95,19 @@
 									<?php endif;?>
 								<?php endforeach;?>
 								<?php endif;?>
-								
+
 								<div class="layui-form-item">
 										<input type="hidden" name="price" id="price" readonly disabled value ="<?php echo $product['price'];?>">
 										<input type="hidden" name="qty" id="qty" readonly disabled value ="<?php if($product['stockcontrol']>0):?><?php if($product['qty']>0):?><?php echo $product['qty'];?><?php else:?>库存不足<?php endif;?><?php else:?>不限量<?php endif;?>">
 										<input type="hidden" name="stockcontrol" id="stockcontrol" value="<?php echo $product['stockcontrol'];?>">
 										<input type="hidden" name="limitorderqty" id="limitorderqty" value="<?php echo $config['limitorderqty'];?>">
 										<input type="hidden" name="pid" id="pid" value="<?php echo $product['id'];?>">
+										<input type="hidden" name="uid" id="uid" value="<?php echo $product['uid'];?>">
 										<button class="layui-btn layui-btn-fluid" id="buy" lay-submit lay-filter="buy" <?php if($product['stockcontrol']>0 AND $product['qty']<1):?>disabled="disabled"<?php endif;?>>立即购买</button>
 								</div>
 							</form>
                         </div>
-						
+
 
 						<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
 							<ul class="layui-tab-title">
