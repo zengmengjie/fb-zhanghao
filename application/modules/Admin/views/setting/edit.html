@@ -17,13 +17,13 @@
                             </div>
                         </div>
 
-                        <?php if($item['name']=='notice' or $item['name']=='ad'):?>
+                        <?php if($item['name']=='notice' or $item['name']=='ad' or $item['name']=='kefu'):?>
 							<div class="layui-form-item layui-form-text">
 								<label for="value" class="layui-form-label">值</label>
 								<div class="layui-input-block">
 									<textarea placeholder="" id="value" name="value" autocomplete="off" class="layui-textarea" style="height: 80px;"><?php echo $item['value'];?></textarea>
 								</div>
-							</div> 
+							</div>
 						<?php else:?>
 							<div class="layui-form-item">
 								<label for="value" class="layui-form-label">值</label>
@@ -32,7 +32,7 @@
 								</div>
 							</div>
 						<?php endif;?>
-                       
+
                         <div class="layui-form-item layui-form-text">
                             <label for="tag" class="layui-form-label">备注</label>
                             <div class="layui-input-block">

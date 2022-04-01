@@ -23,13 +23,13 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract
     public function _initRoute() {
         $router = Yaf\Dispatcher::getInstance()->getRouter();
         $index_detail = new Yaf\Route\Regex(
-            '#index/([0-9A-Za-z]+).html#',
+            '#index/([0-9]+).html#',
             array('module' => 'product', 'controller' => 'index', 'action' => 'index'),
             array(1 => 'uid')
         );
         $router->addRoute('index_detail', $index_detail);
         $products_detail = new Yaf\Route\Regex(
-            '#product/([0-9]+)/([0-9A-Za-z]+).html#',
+            '#product/([0-9]+)/([0-9]+).html#',
             array('module' => 'product', 'controller' => 'detail', 'action' => 'index'),
             array(1 => 'pid',2 => 'uid')
         );

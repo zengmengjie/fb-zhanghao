@@ -20,7 +20,6 @@ class DetailController extends ProductBasicController
     public function indexAction()
     {
 		$pid = $this->get('pid');
-		$uid = $this->get('uid')?:'';
 		if($pid AND is_numeric($pid) AND $pid>0){
 			$product = $this->m_products->Where(array('id'=>$pid,'active'=>1,'isdelete'=>0))->SelectOne();
 			if(!empty($product)){
@@ -45,7 +44,7 @@ class DetailController extends ProductBasicController
 				if($product['qty_switch']>0){
 					$product['qty'] = $product['qty_virtual'];
 				}
-                $product['uid'] = $uid;
+                $product['uid'] = $this->kefu;
 				//如果是密码商品
 				if(strlen($product['password'])>0){
 					$tpl = "password";
