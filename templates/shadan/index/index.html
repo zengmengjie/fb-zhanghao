@@ -7,7 +7,7 @@
 			<i class="layui-icon layui-icon-speaker"></i><?php echo $config['notice'];?>
 		</blockquote>
 		<?php endif;?>
-        
+
 		<!--电脑端-->
 		<?php if(!empty($products)):?>
 			<?php foreach($products_type_active AS $type):?>
@@ -31,7 +31,7 @@
 								<th>销量</th>
 								<th>单价</th>
 								<th align="center" style="text-align: center !important;">操作</th>
-							</tr> 
+							</tr>
 						 </thead>
 						 <tbody>
 					<?php foreach($products AS $p):?>
@@ -52,7 +52,7 @@
 			</div>
 			<?php endforeach;?>
 		<?php endif;?>
-		
+
 		<!--移动端-->
 		<?php if(!empty($products)):?>
 			<?php foreach($products_type_active AS $type):?>
@@ -62,18 +62,18 @@
 
 					<?php foreach($products AS $p):?>
 						<?php if($p['typeid']==$type['id']):?>
-						<a href="/product/<?php echo $p['id'];?>.html">
+						<a href="/product/<?php echo $p['id'];?>/<?php echo $p['uid'];?>.html">
 							<div class="layui-col-md3 layui-col-sm4 goodsdetail">
 								<div class="goodsdetail-mobile">
 									<div class="goodsdetail-mobile-img">
 										<?php if(strlen($p['imgurl'])>0):?>
-											<img src="<?php echo $p['imgurl'];?>"> 
+											<img src="<?php echo $p['imgurl'];?>">
 										<?php else:?>
-											<img src="/res/images/noimg.jpg"> 
+											<img src="/res/images/noimg.jpg">
 										<?php endif;?>
 									</div>
 									<div class="goodsdetail-mobile-text">
-										<p class="biaozhi"> 
+										<p class="biaozhi">
 											<?php if($p['auto']>0):?><span class="layui-badge layui-bg-green">自动发货</span><?php else:?><span class="layui-badge layui-bg-gray">手工发货</span><?php endif;?>
 											<?php if($p['iszhekou']>0):?><span class="layui-badge layui-bg-orange">有折扣</span><?php endif;?>
 										</p>
@@ -93,7 +93,7 @@
 			</div>
 			<?php endforeach;?>
 		<?php endif;?>
-		
+
     </div>
 </div>
 <div id="layerad" style="display: none;"><?php echo $config['layerad'];?></div>

@@ -40,6 +40,7 @@ class IndexController extends ProductBasicController
 					if($p['qty_switch']>0){
 						$items[$k]['qty'] = $p['qty_virtual'];
 					}
+                    $items[$k]['uid'] = $this->kefu;
 				}
 				$data['products_type_active'] = $products_type_active;
 				$data['products'] = $items;

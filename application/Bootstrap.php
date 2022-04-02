@@ -29,7 +29,7 @@ class Bootstrap extends \Yaf\Bootstrap_Abstract
         );
         $router->addRoute('index_detail', $index_detail);
         $products_detail = new Yaf\Route\Regex(
-            '#product/([0-9]+)/([0-9]+).html#',
+            '#product/([0-9]+)/([0-9]+)?.html#',
             array('module' => 'product', 'controller' => 'detail', 'action' => 'index'),
             array(1 => 'pid',2 => 'uid')
         );
